@@ -2,6 +2,6 @@
 ## RETOS CODEMBER
 https://codember.dev/
 
-CHALLENGE[1] -->  [GO](./challenge01/challenge01.py)
-CHALLENGE[2] -->  [GO](./challenge02/challenge02.py)
+CHALLENGE[1] -->  [GO](https://github.com/Santiagomadaw/codember/tree/main/challenge01)
+CHALLENGE[2] -->  [GO](https://github.com/Santiagomadaw/codember/tree/main/challenge02)
 
