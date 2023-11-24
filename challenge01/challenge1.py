@@ -20,4 +20,4 @@ def load_text(file:str):
     hidden_message =reduce(lambda accum, word:accum + word + str(counted_words[word]), counted_words)
     return hidden_message
 
-print(load_text('C:\\Users\\karho\\Desktop\\P101\\codember\\challenege01\\message_01.txt'))
+print(load_text('message_01.txt'))
