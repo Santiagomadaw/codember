@@ -1,22 +1,13 @@
+from functools import reduce
 
-rosseta = {'#':lambda accum,x: (accum, x + 1),
-           '@':lambda accum,x: (accum, x - 1),
-           '*':lambda accum,x: (accum, x**2),
-           '&':lambda accum,x: (accum + str(x), x)}
+rosseta = {'#': lambda x: (x[0], x[1] + 1),
+           '@': lambda x: (x[0], x[1] - 1),
+           '*': lambda x: (x[0], x[1] **2),
+           '&': lambda x: (x[0] + str(x[1]), x[1])}
 
-def open_file(text_file: str) -> str:
-    with open(text_file, 'r', encoding='utf-8') as file:
-        content = file.read()
-    return content
 
-def decoder(file:str):
-    code = open_file(file)
-    start,message = 0,''
-    for char in code:
-        message, start = rosseta[char](message, start)   
-    return message
+def decoder(file: str):
+    with open(file, 'r', encoding='utf-8') as file:
+        return reduce(lambda accum, char: rosseta[char](accum), file.read(), ('', 0))[0]
+
 print(decoder('message_02.txt'))
-
-    
-    
-    
