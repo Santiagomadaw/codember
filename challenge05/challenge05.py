@@ -10,11 +10,11 @@ def analizer(file):
 
     name_ok = filter(lambda line: line[1].lower() == slugify(line[1]), id_ok)
 
-    mail_ok = filter(lambda line: ('@' in line[2] and len(line[2].split('@')) == 2 and
-                                   line[2].split('@')[0] != '' and
-                                   '.' in line[2].split('@')[1] and
-                                   len(line[2].split('@')[1].split('.')) == 2)
-                     , name_ok)
+    mail_ok = filter(lambda line:   ('@' in line[2] and len(line[2].split('@')) == 2 and
+                                    line[2].split('@')[0] != '' and
+                                    '.' in line[2].split('@')[1] and
+                                    len(line[2].split('@')[1].split('.')) == 2),
+                                    name_ok)
     
     age_ok = filter(lambda line: line[3].lower().isdigit() or line[3].lower() == '', mail_ok)
     
